@@ -1,0 +1,23 @@
+Serine Phosphorylation       552
+Phosphorylation              348
+Tyrosine Phosphorylation     249
+Threonine Phosphorylation    172
+Lysine Methylation            73
+Methylation                   69
+Ubiquitination                54
+Glycosylation                 38
+Acetylation                   35
+Arginine Methylation          21
+Dephosphorylation             10
+SUMOylation                    9
+N-linked glycosylation         9
+Polyubiquitination             5
+Palmitoylation                 5
+O-linked glycosylation         5
+Monoubiquitination             3
+S-Nitrosylation                3
+Demethylation                  2
+Leucine Methylation            1
+S-palmitoylation               1
+Nitration                      1
+S-acylation                    1

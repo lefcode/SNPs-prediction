@@ -39,27 +39,6 @@ Based on PTMD and dbPTM databases which contain information for ptms happening i
 
 `python3 PTMs/ptms.py`
 
-### 6. ZoomVar, tool which computes the Q(SASA) and the number of PPIs happening in spesific positions of proteins.
+### 6. Q(SASA) and structure annotations
 
-In order for this script to run it is necessary for VEP command line tool
-[https://www.ensembl.org/info/docs/tools/vep/script/index.html] to be installed along with full cache file: 
-homo_sapiens_vep_102_GRCh38.tar.gz [ftp://ftp.ensembl.org/pub/current_variation/indexed_vep_cache/]
-
-For the pathogenic file an alignment between uniprot ids and refseq ids was needed in order to run the VEP command line tool since it requires only refseq ids as input. This is executed already in proteins_alignment/refseq_to_uniprot.py
-
-ZoomVar script requires a VEP file so both files must be given to rest_api.py as input.
-
-### VEP commands
-```
-./vep --cache --format id --symbol --canonical --protein -i ~/link/to/SNPs_Tools/ZoomVar_query_script/VEP_input_data/refseqs.txt -o non_pathogenic_vep.txt --force
-./vep --cache --format id --symbol --canonical --protein -i ~/link/to/SNPs_Tools/ZoomVar_query_script/VEP_input_data/pathogenic_refseqs.txt -o pathogenic_vep.txt --force
-```
-
-### After executing all the previous the REST API can now be executed. use the following commands:
-```
-python3 rest_script.py ~/link/to/SNPs_tools/ZoomVar_query_script/ensembl-vep/non_pathogenic_vep.txt non_pathogenic_structure.csv -v -s -n 20 -i 20
-python3 rest_script.py ~/link/to/SNPs_tools/ZoomVar_query_script/ensembl-vep/pathogenic_vep.txt pathogenic_structure.csv -v -s -n 20 -i 20
-```
-
-### Lastly, the following command will construct the feature columns and merge them to the initial datasets
 `python3 ZoomVar_query_script/zoomvar.py`

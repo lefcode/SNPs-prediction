@@ -10,7 +10,7 @@ and are recomputed and used in this project
 
 
 
-1. O-Glycosylation
+### 1. O-Glycosylation
 
 This feature refers to the prediction whether the position of a variant is glycosylated. The computation of this feature involves downloading the [ISOGlyP tool] (https://github.com/jonmohl/ISOGlyP) which predicts if a serine or threonine is glycosylated in all positions of the protein. ISOGlyP is followed by [ISOGlyP-EV_Tables] (https://github.com/jonmohl/ISOGlyP-EV_Tables) that should be downloaded and stored at the same directory as ISOGlyP. Fistly, we devide the data to smaller datablocks and execute the following command for all fasta files.
 ```
@@ -20,7 +20,7 @@ From the resulting csv files we check for each variant whether the position of t
 
 
 
-2. Protein Domains
+### 2. Protein Domains
 
 In this feature we examine whether each variant includes one (or many) of the 10 most frequent protein domains or any of the rest non-frequent. To compute this feature we downloaded from [InterProScan](https://www.ebi.ac.uk/interpro/download/) the interpro_entries_list.tsv
 and from [UniProtKB](https://www.uniprot.org/uniprot/?query=&sort=score) the uniprot_interpro.tsv file by maintaining only Entry and Cross-reference (InterPro) columns. Since in the non pathogenic dataset we have refseq ids we firstly had to do an alignment between Uniprot ids and refseq ids using [Retrieve/ID mapping tool of UniProt] (https://www.uniprot.org/uploadlists/)
@@ -29,7 +29,7 @@ The procedure is as follows. We align the uniprot and refseq ids with IPR identi
 
 
 
-3. PF score
+### 3. PF score
 
 This feature is closely related to the previous feature and quantifies the sensitivity of domains to pathogenic variations.
 For each domain we count how many neutral and pathogenic variants correspond to them and compute the PF score based on the following formula:
@@ -44,12 +44,12 @@ If a variant doesn't include a domain then we assign 0 value.
 
 
 
-4. Complex Formation
+### 4. Complex Formation
 
 In this feature we find all proteins that are involved into protein complexes. We downloaded from [CORUM database](http://mips.helmholtz-muenchen.de/corum/#download) the CORUM_allComplexes.txt file and we filtered this file to maintain only records from the "subunits(UniProt IDs)" column that refer to Human. For each protein of our datasets we checked whether it is involved in any protein complex and we assigned 1 to the ones that do, otherwise we assigned 0.
 
 
-5. PTMs
+### 5. PTMs
 
 In this feature we find whether a variant falls into a same position with frequent and non-frequent PTMs.
 We downloaded from [PTMD database](http://ptmd.biocuckoo.org/download.php) the PTMD.txt file and from [dbPTM database](http://dbptm.mbc.nctu.edu.tw/download.php) all gzipped files.
@@ -59,7 +59,7 @@ Lastly, for each variant of the dataset we inspect whether the position falls in
 
 
 
-6. ZoomVar features ( Qsasa and structure annotations)
+### 6. ZoomVar features ( Qsasa and structure annotations)
 
 This feature computes the Q(SASA) and structure annotations based on ZoomVar tool. Before the execution an alignment must take place because the ZoomVar tool requires refseq ids as input. Thus, we created a refseq id list that corresponds to the pathogenic data.
 

@@ -37,10 +37,10 @@ Finally, an 18 features dataset 105 columns) was produced for training and testi
 
 # Training Classifiers
 
-
 As a last step, the data from the previous step are preproccessed and given as input to an optimized Random Forest Classifier, while the most important features are extracted.
 
-The ability of the classifier to make correct predictions is evaluated with a separate and distinct dataset, which was extracted from the collected data, as well as with the HumVar and HumDiv datasets
+The ability of the classifier to make correct predictions is evaluated with a separate and distinct dataset, which was extracted from the collected data, as well as with the HumVar and HumDiv benchmark datasets.
 
-The results are very satisfying and promising for SNPs prediction
+We subsequently compare the results, i.e. the measure of effectively analyzing protein features and feeding a model to annotate each data point as "pathogenic" or "non pathogenic", between the current tool and the EnsembleGASVR methodology. Thereafter, we use an ensemble method which uses an evolutionary multi-objective algorithm based on Pareto frontiers to optimize a classifier chain of Random Forests and Support Vector Machines (SVMs) that is presented in [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7266406/].
 
+The results are very satisfying and promising for SNPs prediction. Also, the presented repository is automated and can be integrated readily for further applications.
